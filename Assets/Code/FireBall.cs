@@ -20,10 +20,11 @@ public class FireBall : MonoBehaviour {
     {
         if(col.gameObject.tag == "Enemy")
         {
-            gibs.SetActive(true);
-            gibs.transform.parent = null;
-            Remove();
+            col.gameObject.BroadcastMessage("Death");    
         }
+        gibs.SetActive(true);
+        gibs.transform.parent = null;
+        Remove();
     }
 
 

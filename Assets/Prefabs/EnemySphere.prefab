@@ -12,6 +12,7 @@ GameObject:
   - 135: {fileID: 13514656}
   - 23: {fileID: 2321546}
   - 114: {fileID: 11493532}
+  - 114: {fileID: 11497180}
   m_Layer: 0
   m_Name: EnemySphere
   m_TagString: Enemy
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4582523, y: 2, z: 0.3072157}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 431984}
@@ -105,8 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gib: {fileID: 146422, guid: 027a4f49d29e08746a88ac4b5b407f90, type: 2}
-  numberOfGibs: 20
-  force: 100
+  numberOfGibs: 50
+  force: 120
 --- !u!114 &11493532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -119,6 +120,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
+--- !u!114 &11497180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa708b65a0c821f41af63d07741d383a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &13514656
 SphereCollider:
   m_ObjectHideFlags: 1

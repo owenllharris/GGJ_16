@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemySpawner : MonoBehaviour {
-
+public class EnemySpawner : MonoBehaviour
+{
     public float spawnRate = 5f;
     public float spawnDistance = 10f;
     public GameObject[] enemies;
@@ -16,13 +16,8 @@ public class EnemySpawner : MonoBehaviour {
     {
         Vector3 location = Random.onUnitSphere;
         location *= 10;
-
-
         Instantiate(enemies[0], randomPointOnCircle(15) + Vector3.up, Quaternion.identity);
-
     }
-
-
 
     Vector3 randomPointOnCircle(float scale)
     {

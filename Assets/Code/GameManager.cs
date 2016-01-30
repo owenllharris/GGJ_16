@@ -1,19 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour 
+{
+	private static GameManager _instance;
+	public static GameManager instance {
+		get {
+			return _instance;
+		}
+	}
 
     public static GameObject player;
 
+	void Awake()
+	{
+		if (_instance != null)
+		{
+			Destroy (gameObject);
+			return;
+		}
+		player = GameObject.FindWithTag("Player");
 
-
-	// Use this for initialization
-	void Start () {
-        player = GameObject.FindWithTag("Player");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void OnEnable()
+	{
+		if (_instance == null) 
+		{
+			_instance = this;
+		}
+	}
+
+	void Start () 
+	{
 	}
 }

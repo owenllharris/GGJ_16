@@ -12,7 +12,7 @@ public class FireBall : MonoBehaviour {
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = Camera.main.transform.forward * speed;
+        rb.velocity = transform.forward * speed;
         Invoke("Remove", 10f);
     }
 

@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
 
 	void Awake()
 	{
-		enemyType = (EnemyType)Random.Range (0, 2);
+//		enemyType = (EnemyType)Random.Range (0, 2);
 	}
 
 	void Start()

@@ -18,7 +18,8 @@ a = GetComponent<AudioSource>();
         a.pitch = Random.Range(0.7f, 1.3f);
         a.volume = Random.Range(0.8f, 1f);
         a.PlayOneShot(shootSound);
-        StartCoroutine(PlayLoop(shootSound.length));        Invoke("Remove", 10f);
+        StartCoroutine(PlayLoop(shootSound.length));        
+		Invoke("Remove", 10f);
     }
 
     void OnCollisionEnter(Collision col)

@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
     {
         Vector3 location = Random.onUnitSphere;
         location *= 10;
-		GameObject.Instantiate(enemies[0], randomPointOnCircle(15) + Vector3.up, Quaternion.identity);
+		GameObject.Instantiate(enemies[Random.Range(0, enemies.Length)], randomPointOnCircle(15) + Vector3.up, Quaternion.identity);
     }
 
     Vector3 randomPointOnCircle(float scale)

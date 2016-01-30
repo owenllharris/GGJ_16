@@ -3,9 +3,14 @@ using System.Collections;
 
 public class Gib : MonoBehaviour 
 {
+
+    public AudioClip[] clips;
+    AudioSource a;
 	IEnumerator Start () 
 	{
 		yield return new WaitForSeconds(Random.Range(3f, 8f));
+        a = GetComponent<AudioSource>();
+        clips = new AudioClip[6];
 		Material mat = transform.GetComponent<Renderer> ().material;
 		float elapsed = 0f;
 		float duration = 1f;
@@ -17,4 +22,8 @@ public class Gib : MonoBehaviour
 		}
 		Destroy (gameObject);
 	}
+
+    void OnCollisionEnter(Collision col) {
+        a.PlayOneShot(clips[Random.Range(0, clips.Length)]);
+    }
 }

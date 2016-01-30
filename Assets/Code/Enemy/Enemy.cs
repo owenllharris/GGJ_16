@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
 	public EnemyFireball fireBall;
 
 	public float hideTime = 3f;
+	public float shootDistance = 3f;
 
 	public float cooldown = 3f;
 	private float coolingDown = 0f;

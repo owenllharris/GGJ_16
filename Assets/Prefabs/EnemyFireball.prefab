@@ -14,7 +14,7 @@ GameObject:
   - 54: {fileID: 5477498}
   - 96: {fileID: 9660816}
   - 114: {fileID: 11408048}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: EnemyFireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,8 +169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  arcDistanceMod: 2
   gibs: {fileID: 118236}
-  heightBezier: {x: 0, y: 3, z: 0}
 --- !u!114 &11470848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,6 +231,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: heightBezier.y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

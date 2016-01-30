@@ -5,7 +5,7 @@ public class Gib : MonoBehaviour
 {
 	IEnumerator Start () 
 	{
-		yield return new WaitForSeconds(Random.Range(25f, 35f));
+		yield return new WaitForSeconds(Random.Range(10f, 20f));
 		Material mat = transform.GetComponent<Renderer> ().material;
 		float elapsed = 0f;
 		float duration = 1f;

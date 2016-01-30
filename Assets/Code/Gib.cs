@@ -3,9 +3,10 @@ using System.Collections;
 
 public class Gib : MonoBehaviour 
 {
+	public float min = 5f, max = 10f;
 	IEnumerator Start () 
 	{
-		yield return new WaitForSeconds(Random.Range(25f, 35f));
+		yield return new WaitForSeconds(Random.Range(min, max));
 		Material mat = transform.GetComponent<Renderer> ().material;
 		float elapsed = 0f;
 		float duration = 1f;

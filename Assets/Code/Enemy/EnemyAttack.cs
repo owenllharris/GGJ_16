@@ -22,7 +22,11 @@ public class EnemyAttack : EnemyBehaviour
 	{
 		EnemyFireball fireball = GameObject.Instantiate<EnemyFireball>(enemy.fireBall);
 		fireball.transform.position = enemy.transform.position + enemy.transform.forward;
-		fireball.Fire (enemy.transform, target);
+		if(enemy.enemyType == EnemyType.Arc)
+			fireball.FireArc (enemy.transform, target);
+		else
+			fireball.Fire (enemy.transform, target);
+
 		enemy.Attacked ();
 	}
 
@@ -32,17 +36,8 @@ public class EnemyAttack : EnemyBehaviour
 		Attack ();
 		yield return new WaitForSeconds (1f);
 		Attack ();
-		yield return new WaitForSeconds (1f);
-		Attack ();
 		yield return new WaitForSeconds (0.25f);
 		enemy.ChangeBehaviour(new EnemyTakeCover(enemy));
-
-//		while (true) 
-//		{
-//			destination = enemy.transform + Vector3.left;
-//			enemy.navMeshAgent.SetDestination (destination);
-//			yield return null;
-//		}
 	}
 
 	public override void Run ()

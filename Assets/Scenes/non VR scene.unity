@@ -715,6 +715,7 @@ MonoBehaviour:
   spawnDistance: 10
   enemies:
   - {fileID: 112840, guid: 7dbde8449dff97e48a8db215961393fd, type: 2}
+  - {fileID: 112840, guid: d716c170356b4314595af097a4bacb80, type: 2}
 --- !u!1 &1622483218
 GameObject:
   m_ObjectHideFlags: 0

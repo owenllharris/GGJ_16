@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: cafa8ff0ae8b1884f8307a8616c5689e
-timeCreated: 1454097573
+guid: 0e294ae817560214aa26e81aa19f08f6
+timeCreated: 1454161420
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,10 +9,10 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: exportedDivvil
+    4300000: Baphomet
     9500000: //RootNode
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
@@ -38,7 +38,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importBlendShapes: 0
+    importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -54,7 +54,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
@@ -69,7 +69,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

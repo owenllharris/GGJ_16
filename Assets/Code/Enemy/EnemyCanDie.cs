@@ -15,12 +15,6 @@ public class EnemyCanDie : MonoBehaviour {
     {
         gibs.SetActive(true);
         gibs.transform.parent = null;
-
         Destroy(gameObject);
-
-    }
-
-
-
-	
+    }	
 }

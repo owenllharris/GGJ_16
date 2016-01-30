@@ -18,7 +18,7 @@ public class SpawnFireball : MonoBehaviour {
 	void Update () {
         if (Input.GetButtonDown("Jump"))
         {
-            Instantiate(fireBall, transform.position + Camera.main.transform.forward, Camera.main.transform.rotation);
+            Instantiate(fireBall, transform.position + transform.forward, Camera.main.transform.rotation);
         }
 	}
 
@@ -26,7 +26,7 @@ public class SpawnFireball : MonoBehaviour {
 
     void FireBall(object sender, ClickedEventArgs e)
     {
-        Instantiate(fireBall, transform.position + Camera.main.transform.forward, transform.rotation);
+        Instantiate(fireBall, transform.position + transform.forward, transform.rotation);
 
     }
 }

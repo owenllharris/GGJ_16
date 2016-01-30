@@ -40,7 +40,7 @@ public class SteamVR_TrackedController : MonoBehaviour
         {
             gameObject.AddComponent<SteamVR_TrackedObject>();
         }
-        this.GetComponent<SteamVR_TrackedObject>().index = (SteamVR_TrackedObject.EIndex)controllerIndex;
+        controllerIndex = (uint)this.GetComponent<SteamVR_TrackedObject>().index;
         if (this.GetComponent<SteamVR_RenderModel>() != null)
         {
             this.GetComponent<SteamVR_RenderModel>().index = (SteamVR_TrackedObject.EIndex)controllerIndex;

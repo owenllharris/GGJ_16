@@ -13,7 +13,7 @@ public class FireBall : MonoBehaviour {
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = Camera.main.transform.forward * speed;
+        rb.velocity = transform.forward * speed;
 a = GetComponent<AudioSource>();
         a.pitch = Random.Range(0.7f, 1.3f);
         a.volume = Random.Range(0.8f, 1f);

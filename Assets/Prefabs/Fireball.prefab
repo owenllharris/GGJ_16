@@ -385,6 +385,18 @@ Prefab:
       propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b7760729895d58a44a5cfa39ec5a742d, type: 3}
+    - target: {fileID: 0}
+      propertyPath: loopSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ab61cbce2d0913d45804df6f3337a469, type: 3}
+    - target: {fileID: 0}
+      propertyPath: impactSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0742c925f556bc448b31cce4f0586b75, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 116842}

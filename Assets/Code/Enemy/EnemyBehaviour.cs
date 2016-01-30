@@ -11,7 +11,7 @@ public class EnemyBehaviour
 	{
 		name = this.GetType ().Name;
 		this.enemy = enemy;
-		Debug.Log (name, enemy.gameObject);
+		//Debug.Log (name, enemy.gameObject);
 	}
 	public virtual void Begin()
 	{

@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum EnemyType
+{
+	Arc = 0,
+	Straight = 1
+}
 public class Enemy : MonoBehaviour 
 {
 	private NavMeshAgent _navMeshAgent;
@@ -22,6 +27,8 @@ public class Enemy : MonoBehaviour
 	public float cooldown = 3f;
 	private float coolingDown = 0f;
 
+	public EnemyType enemyType;
+
 	public bool isCooledDown {
 		get {
 			return Mathf.Approximately(coolingDown,cooldown);
@@ -31,6 +38,11 @@ public class Enemy : MonoBehaviour
 	public void Attacked()
 	{
 		coolingDown = 0f;
+	}
+
+	void Awake()
+	{
+//		enemyType = (EnemyType)Random.Range (0, 2);
 	}
 
 	void Start()

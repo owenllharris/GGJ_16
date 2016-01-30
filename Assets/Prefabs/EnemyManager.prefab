@@ -8,6 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 421918}
+  - 114: {fileID: 11457840}
   m_Layer: 0
   m_Name: EnemyManager
   m_TagString: Untagged
@@ -27,6 +28,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11457840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15baac48db98fe4468715f84774e9cad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnRate: 5
+  spawnDistance: 10
+  enemies:
+  - {fileID: 112840, guid: 7dbde8449dff97e48a8db215961393fd, type: 2}
+  - {fileID: 112840, guid: d716c170356b4314595af097a4bacb80, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

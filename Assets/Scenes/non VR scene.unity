@@ -14,7 +14,7 @@ SceneSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.4044118, g: 0.4578092, b: 1, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.05
@@ -706,7 +706,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1499959770}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15baac48db98fe4468715f84774e9cad, type: 3}
   m_Name: 
@@ -715,6 +715,7 @@ MonoBehaviour:
   spawnDistance: 10
   enemies:
   - {fileID: 112840, guid: 7dbde8449dff97e48a8db215961393fd, type: 2}
+  - {fileID: 112840, guid: d716c170356b4314595af097a4bacb80, type: 2}
 --- !u!1 &1622483218
 GameObject:
   m_ObjectHideFlags: 0

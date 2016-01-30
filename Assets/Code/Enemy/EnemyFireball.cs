@@ -23,7 +23,36 @@ public class EnemyFireball : MonoBehaviour
 		StartCoroutine (Firing (from, to));
 	}
 
+	public void FireArc(Transform from, Transform to)
+	{
+		FireArc (from.position, to.position);
+	}
+
+	public void FireArc(Vector3 from, Vector3 to)
+	{
+		StartCoroutine (FiringArc (from, to));
+	}
+
 	IEnumerator Firing(Vector3 from, Vector3 to)
+	{
+		float elapsed = 0f;
+		Vector3 dir = (new Vector3(to.x, 0, to.z) - new Vector3(from.x, 0, from.z)).normalized;
+		Vector3 start = from;
+		Vector3 end = to + (dir * 10f);
+		float distance = Vector3.Distance (from, end);
+		float duration = distance / speed;
+
+		while(elapsed <= duration)
+		{
+			elapsed += Time.deltaTime; 
+			float percentageComplete = elapsed / duration;
+			transform.position = Vector3.Lerp(start, end, percentageComplete);
+			yield return null;
+		}
+		Destroy (gameObject);
+	}
+
+	IEnumerator FiringArc(Vector3 from, Vector3 to)
 	{
 		float elapsed = 0f;
 		float distance = Vector3.Distance (from, to);
@@ -34,7 +63,7 @@ public class EnemyFireball : MonoBehaviour
 		Vector3 end = to + dir + new Vector3(0,-2,0f);
 
 		Vector3 heightBezier = new Vector3 (0f, distance / arcDistanceMod, 0f);
-		while(elapsed < duration)
+		while(elapsed <= duration)
 		{
 			elapsed += Time.deltaTime; 
 			float percentageComplete = elapsed / duration;

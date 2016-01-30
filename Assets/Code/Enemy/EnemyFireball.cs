@@ -4,8 +4,8 @@ using System.Collections;
 public class EnemyFireball : MonoBehaviour 
 {
 	public float speed = 10f;
+	public float arcDistanceMod = 2f;
 	public GameObject gibs;
-//	public Vector3 heightBezier = new Vector3 (0, 5, 0);
 
 	IEnumerator Start()
 	{
@@ -31,8 +31,9 @@ public class EnemyFireball : MonoBehaviour
 		Vector3 dir = (new Vector3(to.x, 0, to.z) - new Vector3(from.x, 0, from.z)).normalized;
 		Vector3 vectorLerp = Vector3.zero;
 		Vector3 start = from;
-		Vector3 end = to + dir + Vector3.down;
-		Vector3 heightBezier = new Vector3 (0f, distance / 4f, 0f);
+		Vector3 end = to + dir + new Vector3(0,-2,0f);
+
+		Vector3 heightBezier = new Vector3 (0f, distance / arcDistanceMod, 0f);
 		while(elapsed < duration)
 		{
 			elapsed += Time.deltaTime; 
@@ -80,7 +81,7 @@ public class EnemyFireball : MonoBehaviour
 //		{
 //			col.gameObject.BroadcastMessage("Death");    
 //		}
-		if (col.transform.gameObject.layer != 12)
+		if (col.transform.gameObject.layer != 12 && col.transform.gameObject.layer != 15)
 		{
 			Health health = col.GetComponent<Health> ();
 			if (health != null)

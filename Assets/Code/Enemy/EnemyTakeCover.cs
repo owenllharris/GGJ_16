@@ -9,6 +9,7 @@ public class EnemyTakeCover : EnemyBehaviour
 	public EnemyTakeCover(Enemy enemy) : base(enemy)
 	{
 		Begin ();
+		enemy.navMeshAgent.Resume ();
 	}
 
 	public override void Begin ()
@@ -57,5 +58,6 @@ public class EnemyTakeCover : EnemyBehaviour
 
 	public override void End ()
 	{
+		enemy.navMeshAgent.Stop ();
 	}
 }

@@ -17,23 +17,22 @@ public class EnemyAggro : EnemyBehaviour
 	{
 		float distance = Vector3.Distance (target.position, enemy.transform.position);
 
-		if (distance <= 6f && enemy.isCooledDown)
+		if (distance <= enemy.shootDistance && enemy.isCooledDown)
 		{
 			enemy.ChangeBehaviour(new EnemyAttack (enemy, target));
+			return;
 		}
-//
-//		if (distance < 5f) 
-//		{
-//			return;
-//		}
-		
-		enemy.navMeshAgent.SetDestination (target.position);
-		Vector3 dir =  (enemy.navMeshAgent.nextPosition - enemy.transform.position).normalized;
-		enemy.navMeshAgent.Move(dir * enemy.navMeshAgent.speed * Time.deltaTime);
+
+		if (distance > enemy.shootDistance-1) 
+		{
+			enemy.navMeshAgent.SetDestination (target.position);
+			Vector3 dir = (enemy.navMeshAgent.nextPosition - enemy.transform.position).normalized;
+			enemy.navMeshAgent.Move (dir * enemy.navMeshAgent.speed * Time.deltaTime);
+		}
 	}
 
 	public override void End ()
 	{
-
+		enemy.navMeshAgent.Stop ();
 	}
 }

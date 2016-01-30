@@ -9,13 +9,14 @@ public class SpawnFireball : MonoBehaviour {
 
     void Start()
     {
-        controller.TriggerClicked += new ClickedEventHandler(FireBall);
-
+		if(controller != null)
+        	controller.TriggerClicked += new ClickedEventHandler(FireBall);
     }
 
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
         if (Input.GetButtonDown("Jump"))
         {
             Instantiate(fireBall, transform.position + transform.forward, Camera.main.transform.rotation);

@@ -120,7 +120,7 @@ TrailRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 85ecaf33e70137c4ba3939ba5e2d908d, type: 2}
+  - {fileID: 2100000, guid: a14a9d46eb39ef240beb139f1775d97f, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6850d7593521564f91939fe1e0417c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gib: {fileID: 146422, guid: 027a4f49d29e08746a88ac4b5b407f90, type: 2}
+  gib: {fileID: 146422, guid: 7cd16d5c902ee4440bdd3e47183a1924, type: 2}
   numberOfGibs: 20
   force: 70
 --- !u!135 &13575132
@@ -240,6 +240,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a14a9d46eb39ef240beb139f1775d97f, type: 2}
+    - target: {fileID: 0}
+      propertyPath: gib
+      value: 
+      objectReference: {fileID: 146422, guid: 7cd16d5c902ee4440bdd3e47183a1924, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 116842}

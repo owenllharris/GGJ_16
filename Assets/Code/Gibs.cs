@@ -13,7 +13,7 @@ public class Gibs : MonoBehaviour
         for (int i = 0; i < numberOfGibs; i++)
         {
             Vector3 loc = Random.onUnitSphere;
-            GameObject newGib = Instantiate(gib, transform.position + (loc * 0.2f), gib.transform.rotation) as GameObject;
+			GameObject newGib = GameObject.Instantiate(gib, transform.position + (loc * 0.2f), gib.transform.rotation) as GameObject;
             newGib.GetComponent<Rigidbody>().AddForce(loc * force);
         }
 	}

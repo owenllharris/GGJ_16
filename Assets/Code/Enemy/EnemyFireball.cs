@@ -3,14 +3,20 @@ using System.Collections;
 
 public class EnemyFireball : MonoBehaviour 
 {
-	public float speed = 10f;
+    public AudioClip[] clips;
+    AudioSource a;
+
+    public float speed = 10f;
 	public float arcDistanceMod = 2f;
 	public GameObject gibs;
 
 	IEnumerator Start()
 	{
-		yield return new WaitForSeconds (10f);
-		Remove ();
+        a = GetComponent<AudioSource>();
+        clips = new AudioClip[3];
+
+        yield return new WaitForSeconds (10f);
+		StartCoroutine(Remove (0));
 	}
 
 	public void Fire(Transform from, Transform to)
@@ -117,12 +123,15 @@ public class EnemyFireball : MonoBehaviour
 				health.TakeDamage (1);
 			gibs.SetActive (true);
 			gibs.transform.parent = null;
-			Remove ();
+            AudioClip rando = clips[Random.Range(0, clips.Length)];
+            a.PlayOneShot(rando);
+			StartCoroutine(Remove (rando.length));
 		}
 	}
 
-	void Remove()
+	IEnumerator Remove(float secs)
 	{
+        yield return new WaitForSeconds(secs);
 		Destroy(gameObject);
 	}
 }

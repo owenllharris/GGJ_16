@@ -19,7 +19,7 @@ a = GetComponent<AudioSource>();
         a.volume = Random.Range(0.8f, 1f);
         a.PlayOneShot(shootSound);
         StartCoroutine(PlayLoop(shootSound.length));        
-		Invoke("Remove", 10f);
+		Invoke("removeTheFireballsFloatingThroughSpace", 10f);
     }
 
     void OnCollisionEnter(Collision col)
@@ -48,5 +48,10 @@ a = GetComponent<AudioSource>();
         a.clip = loopSound;
         a.loop = true;
         a.Play();
+    }
+
+    void removeTheFireballsFloatingThroughSpace()
+    {
+        Destroy(gameObject);
     }
 }

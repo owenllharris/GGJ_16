@@ -27,4 +27,20 @@ public class EnemySpawner : MonoBehaviour
         loc *= scale;
         return loc;
     }
+
+    void OnEnable()
+    {
+        GameManager.EndGame += stopSpawning;
+    }
+
+    void OnDisable()
+    {
+        GameManager.EndGame -= stopSpawning;
+    }
+
+    void stopSpawning()
+    {
+        CancelInvoke();
+
+    }
 }

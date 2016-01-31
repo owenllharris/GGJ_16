@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameManager : MonoBehaviour 
@@ -10,7 +11,18 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+    public delegate void GamePlayEvent();
+    public static event GamePlayEvent StartGame;
+    public static event GamePlayEvent EndGame;
+
+    public Text scoreBoard;
+
+    public int health = 100;
+    public int score = 0;
+
+
     public static GameObject player;
+    public GameObject healthBar;
 
 	void Awake()
 	{
@@ -20,7 +32,6 @@ public class GameManager : MonoBehaviour
 			return;
 		}
 		player = GameObject.FindWithTag("Player");
-
 	}
 
 	void OnEnable()
@@ -28,10 +39,27 @@ public class GameManager : MonoBehaviour
 		if (_instance == null) 
 		{
 			_instance = this;
-		}
+		}  
 	}
 
-	void Start () 
-	{
-	}
+    public void UpdateScore(int value)
+    {
+        score += value;
+        scoreBoard.text = "000" + score;
+    }
+
+    public void StartTheGame()
+    {
+        if (StartGame != null)
+            StartGame();
+    }
+
+    public void GameOver()
+    {
+        if (EndGame != null)
+            EndGame();
+    }
+
+
+    
 }

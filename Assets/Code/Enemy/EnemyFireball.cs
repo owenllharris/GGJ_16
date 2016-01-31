@@ -112,9 +112,11 @@ public class EnemyFireball : MonoBehaviour
 //		}
 		if (col.transform.gameObject.layer != 12 && col.transform.gameObject.layer != 15)
 		{
+            //Debug.Log("Player hit");
+
 			Health health = col.GetComponent<Health> ();
 			if (health != null)
-				health.TakeDamage (1);
+				health.TakeDamage (5);
 			gibs.SetActive (true);
 			gibs.transform.parent = null;
 			Remove ();

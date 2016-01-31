@@ -8,9 +8,13 @@ public class Gib : MonoBehaviour
     AudioSource a;
 	IEnumerator Start () 
 	{
+<<<<<<< HEAD
 		yield return new WaitForSeconds(Random.Range(3f, 8f));
+=======
         a = GetComponent<AudioSource>();
         clips = new AudioClip[6];
+		yield return new WaitForSeconds(Random.Range(10f, 20f));
+>>>>>>> 9a5ace161d1b6f6fca0b285ab343969a8ca3d008
 		Material mat = transform.GetComponent<Renderer> ().material;
 		float elapsed = 0f;
 		float duration = 1f;
@@ -23,5 +27,7 @@ public class Gib : MonoBehaviour
 		Destroy (gameObject);
 	}
 
-    
+    void OnCollisionEnter(Collision col) {
+        a.PlayOneShot(clips[Random.Range(0, clips.Length)]);
+    }
 }

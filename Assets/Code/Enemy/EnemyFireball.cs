@@ -122,12 +122,12 @@ public class EnemyFireball : MonoBehaviour
 
 			Health health = col.GetComponent<Health> ();
 			if (health != null)
-				health.TakeDamage (5);
+				health.TakeDamage (3);
 			gibs.SetActive (true);
 			gibs.transform.parent = null;
             AudioClip rando = clips[Random.Range(0, clips.Length)];
             a.PlayOneShot(rando);
-			StartCoroutine(Remove (rando.length));
+			StartCoroutine(Remove (0));
 		}
 	}
 
